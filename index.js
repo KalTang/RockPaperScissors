@@ -10,7 +10,7 @@ function play() {
 
 // CPU choice logic
 
-function CpuChoice() {
+function cpuChoice() {
     // gets number between 1 and 3
     let x = Math.floor(Math.random() * 3) + 1;
     console.log(`CPU choice: ${x}`);
@@ -43,6 +43,23 @@ function playerChoice() {
     return input;
 }
 
-play();
+function playRound(cpuChoice, playerChoice) {
+    // Gets the number function
+    const cpuChoice = cpuChoice();
+    const playerChoice = playerChoice();
+
+    // Loop counter for round
+
+    // Logic for winning
+    // Outcomes:
+    // all outcomes for human wins
+    // If cpu choice is 1 (scissors) and human is input is 2 (rock). human wins
+    // if cpu choice is 2 (rock) and human is 3 (paper) human wins
+    // if cput choice is 3 (paper) and human is 1 (scissors) human wins
+    // if CPU choice is equal to human input. Its a tie
+    // All else CPU wins.
+}
+
+// play();
 
 // Win logic
