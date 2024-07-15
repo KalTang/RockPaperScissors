@@ -17,6 +17,19 @@ h1 {
     margin-bottom: 5%;
 }
 
+#rules {
+    display: flex;
+    justify-content: center;
+    text-align: left;
+    flex-direction: column;
+    margin-bottom: 2%;
+    font-size: 1.2em;
+}
+
+.scores {
+    display: none;
+}
+
 .card__container {
     display: flex;
     flex-direction: column;
@@ -58,5 +71,5 @@ h1 {
 }
 
 .displayNone {
-    display: none; /* used to hide specific elements*/
+    display: none !important; /* used to hide specific elements*/
 }

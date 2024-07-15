@@ -38,6 +38,9 @@ function humanPick() {
 
     // handles player choice logic and image file name
     function handlePicks(playerChoice, imageName) {
+        document.getElementById("rules").classList.add("displayNone");
+        document.getElementById("show-scores").classList.remove("scores");
+
         if (round < maxRound) {
             const playerCard = document.querySelector(".player__card img");
             playerCard.src = `./assets/images/${imageName}.jpg`;
