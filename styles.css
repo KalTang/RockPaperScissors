@@ -97,3 +97,26 @@ h1 {
 .displayNone {
     display: none !important; /* used to hide specific elements*/
 }
+
+/* Github icon */
+.social-media__container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+    font-size: 1.1em;
+    font-weight: 700;
+}
+.social-media__icons {
+    width: 35px;
+    height: auto;
+    display: block;
+    margin: 5px;
+    transition: transform 0.2s; /* Animation */
+}
+
+.social-media__icons:hover {
+    box-shadow: 0 0 0.9em #fff;
+    transform: scale(1.1);
+}

@@ -9,6 +9,8 @@ let playerScore = 0;
 // hide reset button if game isn't started
 document.getElementById("exit").classList.add("displayNone");
 
+// hide github icon
+document.getElementById("hide-me").classList.add("displayNone");
 // CPU choice logic
 function cpuPick() {
     // gets number between 1 and 3
@@ -99,8 +101,10 @@ function playRound(playerChoice) {
 
     // Game over when round hits 5.
     if (round === maxRound) {
-        // display the results + game over
+        // display the winner results + game over
         document.getElementById("results").innerHTML = "Game Over!";
+        // display github icons for source code
+        document.getElementById("hide-me").classList.remove("displayNone");
 
         //Change button text
         document.getElementById("exit").innerHTML = "Play again";
