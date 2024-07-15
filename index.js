@@ -85,7 +85,7 @@ function playRound(playerChoice) {
     }
     // Else CPU wins.
     else {
-        document.getElementById("results").innerHTML = "You lose!";
+        document.getElementById("results").innerHTML = "Computer Wins!";
         cpuScore += 1;
     }
     document.getElementById("cpu_score").textContent = cpuScore;
