@@ -10,15 +10,23 @@
     <body>
         <h1>Rock, Paper, Scissors</h1>
 
+        <div class="rules">
+            <h3><strong>Rules</strong></h3>
+            <p>Game is best out of 5</p>
+            <p>Rock beats Scissors</p>
+            <p>Scissors beats Paper</p>
+            <p>Have fun!</p>
+        </div>
+
         <div class="scores">
             <h2>CPU Score: <span id="cpu_score">0</span></h2>
             <h2>Your Score: <span id="player_score">0</span></h2>
+            <h2>Round: <span id="round"></span></h2>
         </div>
-
-        <h2>Round: <span id="round"></span></h2>
 
         <div class="card__container">
             <!-- CPU card -->
+            <div>CPU</div>
             <div class="cpu__card">
                 <img
                     class="card__image"
@@ -37,23 +45,21 @@
                     alt=""
                 />
             </div>
+            <div>You</div>
         </div>
 
+        <!-- Display results during the game -->
         <div id="results"></div>
         <div id="results2"></div>
 
-        <div class="button__container">
+        <div class="button__container" id="hide-buttons">
             <button class="game-btn" id="scissor-btn">Scissor</button>
             <button class="game-btn" id="rock-btn">Rock</button>
             <button class="game-btn" id="paper-btn">Paper</button>
-            <button
-                onclick="window.location.reload()"
-                class="game-btn"
-                id="exit"
-            >
-                Exit
-            </button>
         </div>
+        <button onclick="window.location.reload()" class="game-btn" id="exit">
+            Reset
+        </button>
 
         <!-- Button -->
     </body>

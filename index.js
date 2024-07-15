@@ -36,27 +36,16 @@ function humanPick() {
     const rockButton = document.getElementById("rock-btn");
     const paperButton = document.getElementById("paper-btn");
 
-    // handle choice logic
+    // handles player choice logic and image file name
     function handlePicks(playerChoice, imageName) {
         if (round < maxRound) {
             const playerCard = document.querySelector(".player__card img");
             playerCard.src = `./assets/images/${imageName}.jpg`;
             playRound(playerChoice);
-        } else {
-            document.getElementById("results").innerHTML = "Game Over!";
-            console.log("game over");
-
-            if (playerScore > cpuScore) {
-                document.getElementById("results2").innerHTML =
-                    "You beat the CPU! ";
-            } else if (playerScore === cpuScore) {
-                document.getElementById("results2").innerHTML = "No winner :( ";
-            } else {
-                document.getElementById("results2").innerHTML = "CPU wins... ";
-            }
         }
     }
 
+    // Button even listeners
     scissorButton.addEventListener("click", () => handlePicks(1, "Scissor"));
     rockButton.addEventListener("click", () => handlePicks(2, "Rock"));
     paperButton.addEventListener("click", () => handlePicks(3, "Paper"));
@@ -87,8 +76,6 @@ function playRound(playerChoice) {
     ) {
         document.getElementById("results").innerHTML = "You Win! ";
         playerScore += 1;
-        document.getElementById("cpu_score").textContent = cpuScore;
-        document.getElementById("player_score").textContent = playerScore;
         console.log(`CPU choice: ${cpuChoice}`);
         console.log(`Human choice: ${playerChoice}`);
         console.log("You win!");
@@ -96,8 +83,6 @@ function playRound(playerChoice) {
     // if CPU choice is equal to human input. Its a tie
     else if (cpuChoice === playerChoice) {
         document.getElementById("results").innerHTML = "It's a tie!";
-        document.getElementById("cpu_score").textContent = cpuScore;
-        document.getElementById("player_score").textContent = playerScore;
         console.log(`CPU choice: ${cpuChoice}`);
         console.log(`Human choice: ${playerChoice}`);
         console.log("It is a draw!");
@@ -106,11 +91,32 @@ function playRound(playerChoice) {
     else {
         document.getElementById("results").innerHTML = "You lose!";
         cpuScore += 1;
-        document.getElementById("cpu_score").textContent = cpuScore;
-        document.getElementById("player_score").textContent = playerScore;
         console.log(`CPU choice: ${cpuChoice}`);
         console.log(`Human choice: ${playerChoice}`);
         console.log("You lose!");
+    }
+    document.getElementById("cpu_score").textContent = cpuScore;
+    document.getElementById("player_score").textContent = playerScore;
+
+    // Game over when round hits 5.
+    if (round === maxRound) {
+        // display the results + game over
+        document.getElementById("results").innerHTML = "Game Over!";
+        console.log("game over");
+
+        //Change button text
+        document.getElementById("exit").innerHTML = "Play again";
+        // hides the game buttons
+        document.getElementById("hide-buttons").classList.add("displayNone");
+
+        if (playerScore > cpuScore) {
+            document.getElementById("results2").innerHTML =
+                "You beat the CPU! ";
+        } else if (playerScore === cpuScore) {
+            document.getElementById("results2").innerHTML = "No winner :( ";
+        } else {
+            document.getElementById("results2").innerHTML = "CPU wins... ";
+        }
     }
 }
 
