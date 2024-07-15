@@ -10,6 +10,13 @@
     <body>
         <h1>Rock, Paper, Scissors</h1>
 
+        <div class="scores">
+            <h2>CPU Score: <span id="cpu_score">0</span></h2>
+            <h2>Your Score: <span id="player_score">0</span></h2>
+        </div>
+
+        <h2>Round: <span id="round">1</span></h2>
+
         <div class="card__container">
             <!-- CPU card -->
             <div class="cpu__card">
@@ -31,10 +38,13 @@
                 />
             </div>
         </div>
+
+        <div id="results"></div>
         <div class="button__container">
-            <button>Scissor</button>
-            <button>Rock</button>
-            <button>Paper</button>
+            <button class="game-btn" id="scissor-btn">Scissor</button>
+            <button class="game-btn" id="rock-btn">Rock</button>
+            <button class="game-btn" id="paper-btn">Paper</button>
+            <button class="game-btn" id="exit">Exit</button>
         </div>
 
         <!-- Button -->
