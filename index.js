@@ -10,7 +10,6 @@ let playerScore = 0;
 function cpuPick() {
     // gets number between 1 and 3
     let x = Math.floor(Math.random() * 3) + 1;
-    console.log(`CPU choice: ${x}`);
     return x;
 }
 
@@ -79,24 +78,15 @@ function playRound(playerChoice) {
     ) {
         document.getElementById("results").innerHTML = "You Win! ";
         playerScore += 1;
-        console.log(`CPU choice: ${cpuChoice}`);
-        console.log(`Human choice: ${playerChoice}`);
-        console.log("You win!");
     }
     // if CPU choice is equal to human input. Its a tie
     else if (cpuChoice === playerChoice) {
         document.getElementById("results").innerHTML = "It's a tie!";
-        console.log(`CPU choice: ${cpuChoice}`);
-        console.log(`Human choice: ${playerChoice}`);
-        console.log("It is a draw!");
     }
     // Else CPU wins.
     else {
         document.getElementById("results").innerHTML = "You lose!";
         cpuScore += 1;
-        console.log(`CPU choice: ${cpuChoice}`);
-        console.log(`Human choice: ${playerChoice}`);
-        console.log("You lose!");
     }
     document.getElementById("cpu_score").textContent = cpuScore;
     document.getElementById("player_score").textContent = playerScore;
@@ -105,7 +95,6 @@ function playRound(playerChoice) {
     if (round === maxRound) {
         // display the results + game over
         document.getElementById("results").innerHTML = "Game Over!";
-        console.log("game over");
 
         //Change button text
         document.getElementById("exit").innerHTML = "Play again";
