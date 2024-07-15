@@ -7,7 +7,32 @@
 body {
     background-color: #ffa07a;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     min-height: 100vh;
+}
+
+.card__container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    margin-top: 5%;
+    margin-bottom: 5%;
+}
+
+.card__image {
+    height: 150px;
+    width: auto;
+}
+
+#upside-down {
+    transform: rotate(180deg);
+}
+
+.versus-text {
+    font-size: 2em;
+    font-weight: 800;
 }
