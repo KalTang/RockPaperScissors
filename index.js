@@ -6,6 +6,9 @@ const maxRound = 5;
 let cpuScore = 0;
 let playerScore = 0;
 
+// hide reset button if game isn't started
+document.getElementById("exit").classList.add("displayNone");
+
 // CPU choice logic
 function cpuPick() {
     // gets number between 1 and 3
@@ -37,8 +40,11 @@ function humanPick() {
 
     // handles player choice logic and image file name
     function handlePicks(playerChoice, imageName) {
+        // shows scores and hides rules when any button is pressed
         document.getElementById("rules").classList.add("displayNone");
         document.getElementById("show-scores").classList.remove("scores");
+        // displays reset button when any button is pressed
+        document.getElementById("exit").classList.remove("displayNone");
 
         if (round < maxRound) {
             const playerCard = document.querySelector(".player__card img");
@@ -103,11 +109,12 @@ function playRound(playerChoice) {
 
         if (playerScore > cpuScore) {
             document.getElementById("results2").innerHTML =
-                "You beat the CPU! ";
+                "You beat the Computer! ";
         } else if (playerScore === cpuScore) {
             document.getElementById("results2").innerHTML = "No winner :( ";
         } else {
-            document.getElementById("results2").innerHTML = "CPU wins... ";
+            document.getElementById("results2").innerHTML =
+                "The Computer wins... ";
         }
     }
 }
