@@ -61,6 +61,15 @@ h1 {
 #results {
     font-size: 1.3em;
     margin-bottom: 3%;
+    font-size: 2em;
+    font-weight: 800;
+    color: red;
+}
+#results2 {
+    font-size: 1.3em;
+    margin-bottom: 3%;
+    font-size: 1.1em;
+    font-weight: 700;
 }
 
 .game-btn {
